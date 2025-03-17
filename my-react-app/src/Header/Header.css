@@ -1,0 +1,41 @@
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  header ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  header ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  header ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  hr {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  
