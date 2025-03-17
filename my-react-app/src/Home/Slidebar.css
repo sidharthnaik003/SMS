@@ -1,0 +1,9 @@
+.Slidebar{
+    color: white;
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+    display: flexbox;
+    margin-left: 0%;
+}

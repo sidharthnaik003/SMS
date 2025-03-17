@@ -1,11 +1,13 @@
 import React from "react";
-
+import Slidebar from "./Slidebar";
 import './Home.css'
 
 function Home() {
     return (
         <div className="Student-dashboard">
         <h1 className="Student">Student Dashboard</h1>
+
+        <Slidebar/>
 
         <div className="card">
         <div className="profile">
