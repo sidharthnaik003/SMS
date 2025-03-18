@@ -1,22 +1,18 @@
 import React from "react";
-
-import './Slidebar.css'
+import './Slidebar.css';
 
 function Slidebar() {
     return (
-        
-        <div className="Slidebar">
-          
-          <p>Dashboard</p>
-          <p>Profile overview</p>
-          <p>Academic Information</p>
-          <p>Assignment</p>
-          <p>Time Table</p>
-          <p>Announcements</p>
-          
-    </div>
-      
+        <div className="slidebar">
+            <h2 className="slidebar-header">Menu</h2>
+            <p className="slidebar-item">Dashboard</p>
+            <p className="slidebar-item">Profile Overview</p>
+            <p className="slidebar-item">Academic Information</p>
+            <p className="slidebar-item">Assignments</p>
+            <p className="slidebar-item">Time Table</p>
+            <p className="slidebar-item">Announcements</p>
+        </div>
     );
 }
-  
+
 export default Slidebar;

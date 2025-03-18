@@ -1,14 +1,13 @@
-import Header from "./Header/Header"
-import Footer from "./Footer/Footer"; 
+
 import Home from "./Home/Home";
+import StudentDashboard from "./Home/StudentDashboard";
 
 function App() {
 
   return (
     <>
-    <Header/>
     <Home/>
-    <Footer/>
+    
     </>
   );
 }

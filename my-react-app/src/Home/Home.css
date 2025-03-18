@@ -18,3 +18,50 @@
     max-width: 250px;
     display: ;
 }
+
+.homepage {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #0047ab;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .header p {
+    margin-top: 10px;
+  }
+  
+  .mission, .events, .news, .history, .staff, .contact {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    color: #0047ab;
+  }
+  
+  ul {
+    list-style-type: square;
+    margin: 0;
+    padding: 0;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
