@@ -1,0 +1,133 @@
+/* Container */
+.choose-user-container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Account Link */
+.account-link a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.account-link a:hover {
+  text-decoration: underline;
+}
+
+/* User Type Container */
+.user-type-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.user-type {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-type p {
+  margin: 5px 0 0;
+}
+
+/* Highlight selected user type */
+.user-type.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.remember-me input {
+  margin-right: 5px;
+}
+
+.login-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Forgot Password */
+.forgot-password a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+/* User Type Container */
+.user-type-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.user-type {
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-type p {
+  margin: 5px 0 0;
+}
+
+/* Highlight selected user type */
+.user-type.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Additional styling for the User Icon */
+.user-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 5px;
+}
+
