@@ -45,6 +45,8 @@ const ChatBot = () => {
                   msg.sender === "bot" ? "bot-message" : "user-message"
                 }`}
               >
+
+ 
                 {msg.text}
               </div>
             ))}

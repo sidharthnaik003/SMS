@@ -1,0 +1,21 @@
+backend/
+├── models/
+│   └── User.js      # User model definition
+├── routes/
+│   └── authRoutes.js # Authentication routes (signup, etc.)
+├── .env             # Environment variables (e.g., MongoDB URI, JWT secret)
+├── server.js        # Main server setup
+└── package.json     # Backend dependencies and scripts
+
+
+
+
+frontend/src/
+├── components/
+│   └── Signup.js       # Signup page component
+├── App.js              # Main application file
+├── index.js            # Entry point for React
+├── services/
+│   └── api.js          # Axios API calls to backend
+└── package.json        # Frontend dependencies and scripts
+

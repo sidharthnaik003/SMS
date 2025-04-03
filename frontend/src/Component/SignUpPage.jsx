@@ -21,6 +21,9 @@ const SignUpPage = () => {
       return;
     }
 
+
+    
+
     // Terms and Conditions acceptance validation
     if (!termsAccepted) {
       alert("Please accept the Terms & Conditions.");
