@@ -14,19 +14,19 @@ const About = () => {
           <div class="hero-content">
             <h2> Welcome to the School Management System</h2>
             <p>
-              Welcome to School Management System, your gateway to a world of knowledge and imagination. We are more than just a library; we are a community of book enthusiasts and learners dedicated to fostering a love for reading and lifelong learning.
+            Our school is a renowned institution dedicated to fostering academic excellence, creativity, and leadership. With state-of-the-art infrastructure, experienced faculty, and a commitment to holistic development, we strive to provide the best education to our students.
             </p>
           </div>
           <div class="hero-content">
             <h2> Our Story</h2><br/><br/>
             <p>
-            School Management System was founded with a vision to provide a haven for book lovers of all ages, backgrounds, and interests. Our journey began in [Year of Establishment], and since then, we have been on a mission to make the world of literature accessible to everyone.
+            Our school is a renowned institution dedicated to fostering academic excellence, creativity, and leadership. With state-of-the-art infrastructure, experienced faculty, and a commitment to holistic development, we strive to provide the best education to our students.
             </p>
           </div>
           <div class="hero-content">
             <h2> Our Team</h2><br/><br/>
             <p>
-            Behind School Management System is a passionate team of librarians, educators, and book enthusiasts who are dedicated to curating, preserving, and sharing the world of literature with you. We are here to assist you in discovering the perfect book, organizing events, and making your library experience memorable.
+            Our school is a renowned institution dedicated to fostering academic excellence, creativity, and leadership. With state-of-the-art infrastructure, experienced faculty, and a commitment to holistic development, we strive to provide the best education to our students.
             </p>
           </div>
           <div class="hero-image">
