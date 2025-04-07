@@ -1,10 +1,12 @@
+/* General Styling */
 .home-container {
   padding: 20px;
   font-family: Arial, sans-serif;
-  background-color: #2b2faa;
+  background-color: #5357d3;
   color: #333;
 }
 
+/* Header Section */
 .home-header {
   text-align: center;
   margin-bottom: 40px;
@@ -16,6 +18,11 @@
   color: #ffffff;
 }
 
+.home-header p {
+  color: #ffffff;
+}
+
+/* Section Styling */
 .mission-section,
 .overview-section,
 .history-section,
@@ -30,29 +37,34 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Section Titles */
 section h2 {
   margin-bottom: 15px;
   font-size: 1.8rem;
   color: #007bff;
 }
 
+/* Paragraph & List Styling */
 section p, ul {
   font-size: 1rem;
   line-height: 1.5;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 ul li {
   margin-bottom: 10px;
 }
 
+/* Contact Section Specific Styling */
 .contact-section p {
   margin-bottom: 5px;
 }
+
+/* Academic Section */
 .academics-section {
   margin-bottom: 30px;
   background: #fff;
@@ -80,4 +92,3 @@ ul li {
 .academics-section ul li {
   margin-bottom: 10px;
 }
-

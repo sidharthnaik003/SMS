@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './ChatBot.css'; // Import the CSS for styling
+import React, { useState } from "react";
+import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false); // Track whether the chatbot window is open
@@ -30,42 +30,91 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="chatbot-container">
-      <button className="chatbot-toggle" onClick={handleToggle}>
+    <Box sx={{ position: "fixed", bottom: 16, right: 16, zIndex: 1000 }}>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleToggle}
+        sx={{ marginBottom: isOpen ? 2 : 0 }}
+      >
         {isOpen ? "Close Chat" : "Chat with us"}
-      </button>
+      </Button>
 
       {isOpen && (
-        <div className="chatbot-window">
-          <div className="chatbot-messages">
+        <Paper
+          elevation={3}
+          sx={{
+            width: 300,
+            height: 400,
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+          }}
+        >
+          {/* Chat Messages */}
+          <Box
+            sx={{
+              flex: 1,
+              overflowY: "auto",
+              padding: 2,
+              backgroundColor: "#f5f5f5",
+            }}
+          >
             {messages.map((msg, index) => (
-              <div
+              <Box
                 key={index}
-                className={`chatbot-message ${
-                  msg.sender === "bot" ? "bot-message" : "user-message"
-                }`}
+                sx={{
+                  marginBottom: 2,
+                  textAlign: msg.sender === "bot" ? "left" : "right",
+                }}
               >
-
- 
-                {msg.text}
-              </div>
+                <Typography
+                  sx={{
+                    display: "inline-block",
+                    padding: 1,
+                    borderRadius: 2,
+                    backgroundColor:
+                      msg.sender === "bot" ? "#e0e0e0" : "#3f51b5",
+                    color: msg.sender === "bot" ? "#000" : "#fff",
+                  }}
+                >
+                  {msg.text}
+                </Typography>
+              </Box>
             ))}
-          </div>
-          <form className="chatbot-input-container" onSubmit={handleSend}>
-            <input
-              type="text"
-              className="chatbot-input"
+          </Box>
+
+          {/* Input Field */}
+          <Box
+            component="form"
+            onSubmit={handleSend}
+            sx={{
+              display: "flex",
+              padding: 2,
+              borderTop: "1px solid #ddd",
+              backgroundColor: "#fff",
+            }}
+          >
+            <TextField
+              fullWidth
+              variant="outlined"
+              size="small"
               placeholder="Type your message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="chatbot-send">
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{ marginLeft: 1 }}
+            >
               Send
-            </button>
-          </form>
-        </div>
+            </Button>
+          </Box>
+        </Paper>
       )}
-    </div>
+    </Box>
   );
 };
 

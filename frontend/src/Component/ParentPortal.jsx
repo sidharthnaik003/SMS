@@ -1,40 +1,78 @@
-import React from 'react';
-import './ParentPortal.css'; // CSS file for styling
+import React from "react";
+import { Box, Typography, Paper, Button, List, ListItem } from "@mui/material";
 
 const ParentPortal = () => {
   return (
-    <div className="parent-portal">
-      <header className="portal-header">
-        <h1>Parent Portal Dashboard</h1>
-      </header>
+    <Box
+      sx={{
+        backgroundColor: "#f9f9f9",
+        padding: 4,
+        minHeight: "100vh",
+      }}
+    >
+      {/* Header Section */}
+      <Box
+        sx={{
+          textAlign: "center",
+          marginBottom: 4,
+        }}
+      >
+        <Typography variant="h3" component="h1" gutterBottom>
+          Parent Portal Dashboard
+        </Typography>
+      </Box>
 
-      <div className="portal-content">
-        {/* Progress Section */}
-        <div className="progress-section">
-          <h2>Child's Progress</h2>
-          <p>Grade: A+</p>
-          <p>Attendance: 95%</p>
-          <p>Remarks: Excellent performance!</p>
-        </div>
+      {/* Portal Content */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: 4,
+        }}
+      >
+        {/* Child's Progress Section */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Child's Progress
+          </Typography>
+          <Typography>Grade: A+</Typography>
+          <Typography>Attendance: 95%</Typography>
+          <Typography>Remarks: Excellent performance!</Typography>
+        </Paper>
 
         {/* Announcements Section */}
-        <div className="announcements-section">
-          <h2>Announcements</h2>
-          <ul>
-            <li>Parent-Teacher meeting scheduled for March 25, 2025.</li>
-            <li>School will remain closed on April 5, 2025, due to a public holiday.</li>
-          </ul>
-        </div>
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Announcements
+          </Typography>
+          <List>
+            <ListItem>
+              Parent-Teacher meeting scheduled for March 25, 2025.
+            </ListItem>
+            <ListItem>
+              School will remain closed on April 5, 2025, due to a public
+              holiday.
+            </ListItem>
+          </List>
+        </Paper>
 
         {/* Communication Section */}
-        <div className="communication-section">
-          <h2>Communicate with Teachers</h2>
-          <p>Email: teacher@example.com</p>
-          <p>Phone: +91 9876543210</p>
-          <button className="message-button">Send Message</button>
-        </div>
-      </div>
-    </div>
+        <Paper elevation={3} sx={{ padding: 2, textAlign: "center" }}>
+          <Typography variant="h5" gutterBottom>
+            Communicate with Teachers
+          </Typography>
+          <Typography>Email: teacher@example.com</Typography>
+          <Typography>Phone: +91 9876543210</Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{ marginTop: 2 }}
+          >
+            Send Message
+          </Button>
+        </Paper>
+      </Box>
+    </Box>
   );
 };
 

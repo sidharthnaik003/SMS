@@ -1,57 +1,92 @@
 import React from "react";
+import { Box, Typography, Paper, Divider } from "@mui/material";
 import Slidebar from "./Slidebar";
-import './StudentDashboard.css'
 
 function StudentDashboard() {
-    return (
-        <div className="Student-dashboard">
-        <h1 className="Student">Student Dashboard</h1>
+  return (
+    <Box
+      sx={{
+        backgroundColor: "#f9f9f9",
+        padding: 4,
+        minHeight: "100vh",
+      }}
+    >
+      {/* Dashboard Header */}
+      <Typography
+        variant="h3"
+        component="h1"
+        align="center"
+        gutterBottom
+        sx={{ marginBottom: 4 }}
+      >
+        Student Dashboard
+      </Typography>
 
-        <Slidebar/>
+      {/* Slidebar Component */}
+      <Slidebar />
 
-        <div className="card">
-        <div className="profile">
-            <h1>Profile overview</h1>
-            <p>name</p>
-            <p>rollno</p>
-            <p>class</p>
-        </div>
+      {/* Cards Section */}
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: 4,
+        }}
+      >
+        {/* Profile Overview */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Profile Overview
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <Typography>Name: [Student Name]</Typography>
+          <Typography>Roll No: [Roll No]</Typography>
+          <Typography>Class: [Class]</Typography>
+        </Paper>
 
-        <div className="academic-information">
-            <h1>Academic Information</h1>
-             <p>Subject</p>
-            <p>Marks</p>
-            <p>Attendance</p>
-        </div>
+        {/* Academic Information */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Academic Information
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <Typography>Subjects: [Subject]</Typography>
+          <Typography>Marks: [Marks]</Typography>
+          <Typography>Attendance: [Attendance]</Typography>
+        </Paper>
 
-        
-        <div className="Assignment">
-        <h1>Assignment </h1>
-            <p>Upcomming Assignment</p>
-            <p>Status of submitted Assignment</p>
-            
-        </div>
+        {/* Assignments */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Assignment
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <Typography>Upcoming Assignments: [Assignment]</Typography>
+          <Typography>Status of Submitted Assignments: [Status]</Typography>
+        </Paper>
 
-        <div className="time-table">
-            <h1>Time Table</h1>
-            <p>Daily class shedule</p>
-            <p>Exam dates</p>
-            
-        </div>
+        {/* Time Table */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Time Table
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <Typography>Daily Class Schedule: [Schedule]</Typography>
+          <Typography>Exam Dates: [Dates]</Typography>
+        </Paper>
 
-        
-        <div className="Announcements">
-            <h1>Announcements</h1>
-            <p>new Annoucements</p>
-            <p>Reminder</p>
-        </div>
-
-        
-
-
-        </div>
-        </div>
-    );
+        {/* Announcements */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" gutterBottom>
+            Announcements
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <Typography>New Announcements: [Announcements]</Typography>
+          <Typography>Reminders: [Reminders]</Typography>
+        </Paper>
+      </Box>
+    </Box>
+  );
 }
 
 export default StudentDashboard;

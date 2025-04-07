@@ -1,25 +1,90 @@
-backend/
-├── models/
-│   └── User.js      # User model definition
-├── routes/
-│   └── authRoutes.js # Authentication routes (signup, etc.)
-├── .env             # Environment variables (e.g., MongoDB URI, JWT secret)
-├── server.js        # Main server setup
-└── package.json     # Backend dependencies and scripts
-
-
-
-
-hhhhhhhhhhhhhh
-
-
-
-frontend/src/
-├── components/
-│   └── Signup.js       # Signup page component
-├── App.js              # Main application file
-├── index.js            # Entry point for React
-├── services/
-│   └── api.js          # Axios API calls to backend
-└── package.json        # Frontend dependencies and scripts
-
+school-management-system/
+│
+├── public/                     # Static files (e.g., index.html, images)
+│
+├── src/                        # Source code folder
+│   ├── components/             # Reusable React components
+│   │   ├── Navbar.js           # Navigation bar for the application
+│   │   ├── Footer.js           # Footer section
+│   │   ├── HomePage.js         # Home page overview
+│   │   ├── Notifications/
+│   │   │   ├── Notify.js       # Sending notifications
+│   │   │   └── BulkNotify.js   # Bulk notifications for events
+│   │   ├── Students/
+│   │   │   ├── StudentTable.js # Student list with search, pagination
+│   │   │   ├── StudentForm.js  # Add/Edit student profiles
+│   │   │   ├── BulkImport.js   # Bulk upload of student data
+│   │   │   ├── BulkExport.js   # Export student data to CSV
+│   │   │   └── Attendance.js   # Attendance tracking for students
+│   │   ├── Teachers/
+│   │   │   ├── TeacherTable.js # Teacher list with CRUD operations
+│   │   │   ├── TeacherForm.js  # Add/Edit teacher profiles
+│   │   │   └── TeacherDetails.js # Individual teacher details view
+│   │   ├── Parents/
+│   │   │   ├── ParentTable.js  # Parent list with communication options
+│   │   │   └── ParentDetails.js # Individual parent details view
+│   │   ├── Classes/
+│   │   │   ├── ClassTable.js   # List of classes
+│   │   │   ├── ClassForm.js    # Add/Edit class details
+│   │   │   ├── ClassSchedule.js # Class schedule management
+│   │   │   └── AssignStudents.js # Assign students to classes
+│   │   ├── Courses/
+│   │   │   ├── CourseTable.js  # List of courses
+│   │   │   ├── CourseForm.js   # Add/Edit course details
+│   │   │   └── AssignStudents.js # Assign students to courses
+│   │   ├── Exams/
+│   │   │   ├── ExamTable.js    # Exam management
+│   │   │   ├── CreateExam.js   # Add/Edit exams
+│   │   │   ├── ResultsTable.js # Exam results
+│   │   │   └── ReportCard.js   # Generate report cards for students
+│   │   ├── Auth/
+│   │   │   ├── LoginForm.js    # Login for all users
+│   │   │   ├── RegistrationForm.js # Registration for all roles
+│   │   │   └── ForgotPassword.js # Password reset functionality
+│   │   └── Settings/
+│   │       ├── ProfileSettings.js # User profile settings
+│   │       └── AppSettings.js     # System-wide settings
+│   │
+│   ├── pages/                  # Full pages composed of multiple components
+│   │   ├── Dashboard.js        # Admin dashboard page
+│   │   ├── StudentPortal.js    # Portal for student features
+│   │   ├── TeacherPortal.js    # Portal for teacher features
+│   │   ├── ParentPortal.js     # Portal for parent features
+│   │   ├── Academics.js        # Curriculum and departmental details
+│   │   ├── AttendanceReports.js # Attendance reports
+│   │   └── NotificationCenter.js # Notifications for all users
+│   │
+│   ├── services/               # API utility functions
+│   │   ├── authService.js      # User authentication and role-based access
+│   │   ├── studentService.js   # APIs for student management
+│   │   ├── teacherService.js   # APIs for teacher management
+│   │   ├── classService.js     # APIs for class management
+│   │   ├── examService.js      # APIs for exams and grades
+│   │   └── notificationService.js # APIs for notifications
+│   │
+│   ├── styles/                 # Global and component-specific styles
+│   │   ├── global.css          # Global application styles
+│   │   ├── Dashboard.css       # Admin dashboard styles
+│   │   ├── Students.css        # Student-specific styles
+│   │   ├── Teachers.css        # Teacher-specific styles
+│   │   └── Parents.css         # Parent-specific styles
+│   │
+│   ├── utils/                  # Helper functions for common tasks
+│   │   ├── csvUtils.js         # CSV handling for bulk operations
+│   │   ├── dateUtils.js        # Date formatting utilities
+│   │   ├── validationUtils.js  # Form validation utilities
+│   │   └── roleUtils.js        # Role-based permission checks
+│   │
+│   ├── App.js                  # Main app component
+│   ├── index.js                # Entry point of the application
+│   ├── routes.js               # Define application routes
+│   ├── config.js               # Configuration for environment variables
+│   └── README.md               # Documentation for the project
+│
+├── node_modules/               # Dependencies installed with npm
+│
+├── package.json                # Dependencies and scripts
+│
+├── package-lock.json           # Lock file for consistent dependency versions
+│
+└── README.md                   # General project documentation

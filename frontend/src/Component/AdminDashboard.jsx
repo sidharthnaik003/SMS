@@ -1,71 +1,110 @@
-import React from "react";
-import "./AdminDashboard.css"; // CSS file for styling the dashboard
+import React from 'react';
+import { Box, Typography, Paper, List, ListItem, Divider } from '@mui/material';
 
 const AdminDashboard = () => {
   return (
-    <div className="admin-dashboard">
-      <header className="dashboard-header">
-        <h1>Admin Dashboard</h1>
-      </header>
+    <Box
+      sx={{
+        padding: 4,
+        backgroundColor: '#f9f9f9',
+        minHeight: '100vh',
+      }}
+    >
+      {/* Dashboard Header */}
+      <Box
+        sx={{
+          marginBottom: 4,
+          textAlign: 'center',
+        }}
+      >
+        <Typography variant="h3" component="h1" gutterBottom>
+          Admin Dashboard
+        </Typography>
+      </Box>
 
-      <div className="dashboard-sections">
-        {/* Student Management Section */}
-        <div className="section">
-          <h2>Student Management</h2>
-          <ul>
-            <li>CRUD operations for managing student profiles</li>
-            <li>Search functionality to find students</li>
-            <li>Bulk import/export for multiple students</li>
-          </ul>
-        </div>
+      {/* Dashboard Sections */}
+      <Box
+        sx={{
+          display: 'grid',
+          gap: 4,
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        }}
+      >
+        {/* Section: Student Management */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Student Management
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>CRUD operations for managing student profiles</ListItem>
+            <ListItem>Search functionality to find students</ListItem>
+            <ListItem>Bulk import/export for multiple students</ListItem>
+          </List>
+        </Paper>
 
-        {/* Course Management Section */}
-        <div className="section">
-          <h2>Course Management</h2>
-          <ul>
-            <li>CRUD operations for managing courses</li>
-            <li>Assign students to courses</li>
-            <li>View enrolled students per course</li>
-          </ul>
-        </div>
+        {/* Section: Course Management */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Course Management
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>CRUD operations for managing courses</ListItem>
+            <ListItem>Assign students to courses</ListItem>
+            <ListItem>View enrolled students per course</ListItem>
+          </List>
+        </Paper>
 
-        {/* Attendance Tracking Section */}
-        <div className="section">
-          <h2>Attendance Tracking</h2>
-          <ul>
-            <li>Mark attendance for students</li>
-            <li>View attendance reports (by course or student)</li>
-          </ul>
-        </div>
+        {/* Section: Attendance Tracking */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Attendance Tracking
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>Mark attendance for students</ListItem>
+            <ListItem>View attendance reports (by course or student)</ListItem>
+          </List>
+        </Paper>
 
-        {/* Grades Management Section */}
-        <div className="section">
-          <h2>Grades Management</h2>
-          <ul>
-            <li>Record and update grades for assignments, quizzes, exams</li>
-            <li>Calculate overall grades and GPA</li>
-          </ul>
-        </div>
+        {/* Section: Grades Management */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Grades Management
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>Record and update grades for assignments, quizzes, exams</ListItem>
+            <ListItem>Calculate overall grades and GPA</ListItem>
+          </List>
+        </Paper>
 
-        {/* Reports and Analytics Section */}
-        <div className="section">
-          <h2>Reports and Analytics</h2>
-          <ul>
-            <li>Generate performance and attendance reports</li>
-            <li>Visualize data through charts and graphs</li>
-          </ul>
-        </div>
+        {/* Section: Reports and Analytics */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            Reports and Analytics
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>Generate performance and attendance reports</ListItem>
+            <ListItem>Visualize data through charts and graphs</ListItem>
+          </List>
+        </Paper>
 
-        {/* User Roles and Permissions Section */}
-        <div className="section">
-          <h2>User Roles and Permissions</h2>
-          <ul>
-            <li>Define roles (admin, teacher, student, parent)</li>
-            <li>Manage access levels for different roles</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+        {/* Section: User Roles and Permissions */}
+        <Paper elevation={3} sx={{ padding: 2 }}>
+          <Typography variant="h5" component="h2" gutterBottom>
+            User Roles and Permissions
+          </Typography>
+          <Divider sx={{ marginBottom: 2 }} />
+          <List>
+            <ListItem>Define roles (admin, teacher, student, parent)</ListItem>
+            <ListItem>Manage access levels for different roles</ListItem>
+          </List>
+        </Paper>
+      </Box>
+    </Box>
   );
 };
 

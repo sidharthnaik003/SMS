@@ -1,104 +1,175 @@
 import React from 'react';
-import Navbar from './UserInterfaceNavbar'; // Import the Navbar component
-import ChatBot from './ChatBot'; // Import the ChatBot component (kept specifically here for Home page)
-import './Home.css'; // Import the CSS for styling
+import { AppBar, Toolbar, Typography, Container, Grid, Box, Paper, Button } from '@mui/material';
+import Navbar from './UserInterfaceNavbar'; // Reuse your custom Navbar component
+import ChatBot from './ChatBot'; // Import the ChatBot component
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div>
+      {/* Navbar */}
       <Navbar />
 
       {/* Welcome Section */}
-      <header className="home-header">
-        <h1>Welcome to Our School Management System</h1>
-        <p>Your partner in educational excellence and management.</p>
-      </header>
+      <AppBar position="static" style={{ backgroundColor: '#003366', color: 'white', marginBottom: '20px' }}>
+        <Toolbar>
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            Welcome to Our School Management System
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-      {/* Mission Statement Section */}
-      <section className="mission-section">
-        <h2>Our Mission</h2>
-        <p>
-          Empowering educators and students with tools to unlock their full potential through efficient management and collaboration.
-        </p>
-      </section>
+      <Container>
+        <Grid container spacing={4}>
+          {/* Image and Intro */}
+          <Grid item xs={12} md={6}>
+            <Typography variant="h4" gutterBottom>
+              Welcome!
+            </Typography>
+            <Typography variant="body1" color="textSecondary" paragraph>
+              Your partner in educational excellence and management.
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              href="#contact"
+              style={{ marginTop: '15px' }}
+            >
+              Get in Touch
+            </Button>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <img
+              src="/path-to-your-image/students.jpg"
+              alt="Happy Students"
+              style={{ width: '100%', borderRadius: '10px' }}
+            />
+          </Grid>
+        </Grid>
 
-      {/* Overview Section */}
-      <section className="overview-section">
-        <h2>Overview</h2>
-        <p>
-          Our school is a renowned institution dedicated to fostering academic excellence,
-          creativity, and leadership. With state-of-the-art infrastructure, experienced faculty,
-          and a commitment to holistic development, we strive to provide the best education to our students.
-        </p>
-      </section>
+        {/* Mission Statement */}
+        <Box my={5}>
+          <Paper elevation={3} style={{ padding: '20px' }}>
+            <Typography variant="h5" gutterBottom>
+              Our Mission
+            </Typography>
+            <Typography>
+              Empowering educators and students with tools to unlock their full potential through efficient management and collaboration.
+            </Typography>
+          </Paper>
+        </Box>
 
-      {/* Academics Section */}
-      <section className="academics-section">
-        <h2>Academics</h2>
-        <p>
-          We offer a comprehensive and inclusive curriculum designed to meet the needs of 21st-century learners. 
-          Our academic calendar ensures a balanced approach to learning, including examinations, holidays, and special events.
-        </p>
-        <ul>
-          <li>Curriculum: Tailored for both practical and theoretical excellence, covering core subjects and electives.</li>
-          <li>Academic Calendar: Keep track of key dates, including exams, holidays, and school events.</li>
-          <li>Departments: Specialized departments for Science, Arts, Mathematics, and Languages.</li>
-        </ul>
-      </section>
+        {/* Overview Section */}
+        <Box my={5}>
+          <Typography variant="h5" gutterBottom>
+            Overview
+          </Typography>
+          <Typography paragraph>
+            Our school is a renowned institution dedicated to fostering academic excellence, creativity, and leadership. With state-of-the-art infrastructure, experienced faculty, and a commitment to holistic development, we strive to provide the best education to our students.
+          </Typography>
+        </Box>
 
-      {/* History Section */}
-      <section className="history-section">
-        <h2>History</h2>
-        <p>
-          Established in 1985, our school has a rich heritage of over 40 years of excellence in education.
-          From humble beginnings with a handful of students, we have grown into a flourishing institution
-          known for its innovative teaching methods and outstanding results.
-        </p>
-      </section>
+        {/* Academic Section */}
+        <Box my={5}>
+          <Paper elevation={3} style={{ padding: '20px' }}>
+            <Typography variant="h5" gutterBottom>
+              Academics
+            </Typography>
+            <Typography>
+              We offer a comprehensive and inclusive curriculum designed to meet the needs of 21st-century learners.
+            </Typography>
+            <ul>
+              <li>
+                <Typography>Curriculum: Practical and theoretical excellence.</Typography>
+              </li>
+              <li>
+                <Typography>Academic Calendar: Exams, holidays, and school events.</Typography>
+              </li>
+              <li>
+                <Typography>Departments: Specialized Science, Arts, and Mathematics departments.</Typography>
+              </li>
+            </ul>
+          </Paper>
+        </Box>
 
-      {/* Staff Section */}
-      <section className="staff-section">
-        <h2>Meet Our Staff</h2>
-        <p>
-          Our dedicated team of educators and staff members work tirelessly to create a positive
-          and nurturing learning environment for our students.
-        </p>
-        <ul>
-          <li>Principal: Dr. Anjali Sharma</li>
-          <li>Vice Principal: Mr. Rajesh Gupta</li>
-          <li>Head of Science Department: Mrs. Kavita Mehra</li>
-          <li>Head of Arts Department: Mr. Arvind Kapoor</li>
-        </ul>
-      </section>
+        {/* History */}
+        <Box my={5}>
+          <Typography variant="h5" gutterBottom>
+            History
+          </Typography>
+          <Typography paragraph>
+            Established in 1985, our school has a rich heritage of over 40 years of excellence in education.
+          </Typography>
+        </Box>
 
-      {/* Upcoming Events Section */}
-      <section className="events-section">
-        <h2>Upcoming Events</h2>
-        <ul>
-          <li>Parent-Teacher Meeting - March 25, 2025</li>
-          <li>Sports Meet - April 10, 2025</li>
-          <li>Annual Function - May 15, 2025</li>
-        </ul>
-      </section>
+        {/* Staff */}
+        <Box my={5}>
+          <Paper elevation={3} style={{ padding: '20px' }}>
+            <Typography variant="h5" gutterBottom>
+              Meet Our Staff
+            </Typography>
+            <Typography>
+              Our dedicated team of educators and staff members create a positive and nurturing learning environment.
+            </Typography>
+            <ul>
+              <li>
+                <Typography>Principal: Dr. Anjali Sharma</Typography>
+              </li>
+              <li>
+                <Typography>Vice Principal: Mr. Rajesh Gupta</Typography>
+              </li>
+              <li>
+                <Typography>Head of Science: Mrs. Kavita Mehra</Typography>
+              </li>
+              <li>
+                <Typography>Head of Arts: Mr. Arvind Kapoor</Typography>
+              </li>
+            </ul>
+          </Paper>
+        </Box>
 
-      {/* Recent News Section */}
-      <section className="news-section">
-        <h2>Recent News</h2>
-        <p>
-          Congratulations to our students for their achievements in the state-level Science Olympiad!
-        </p>
-      </section>
+        {/* Upcoming Events */}
+        <Box my={5}>
+          <Typography variant="h5" gutterBottom>
+            Upcoming Events
+          </Typography>
+          <ul>
+            <li>
+              <Typography>Parent-Teacher Meeting - March 25, 2025</Typography>
+            </li>
+            <li>
+              <Typography>Sports Meet - April 10, 2025</Typography>
+            </li>
+            <li>
+              <Typography>Annual Function - May 15, 2025</Typography>
+            </li>
+          </ul>
+        </Box>
 
-      {/* Contact Section */}
-      <section className="contact-section">
-        <h2>Contact Us</h2>
-        <p>Email: admin@schoolmanagement.com</p>
-        <p>Phone: +91 9876543210</p>
-        <p>Address: 123 School Road, New Delhi, India</p>
-      </section>
+        {/* Recent News */}
+        <Box my={5}>
+          <Paper elevation={3} style={{ padding: '20px' }}>
+            <Typography variant="h5" gutterBottom>
+              Recent News
+            </Typography>
+            <Typography>
+              Congratulations to our students for their achievements in the state-level Science Olympiad!
+            </Typography>
+          </Paper>
+        </Box>
 
-      {/* ChatBot Component */}
-      <ChatBot /> {/* Exclusively for the Home page */}
+        {/* Contact Section */}
+        <Box id="contact" my={5}>
+          <Typography variant="h5" gutterBottom>
+            Contact Us
+          </Typography>
+          <Typography>Email: admin@schoolmanagement.com</Typography>
+          <Typography>Phone: +91 9876543210</Typography>
+          <Typography>Address: 123 School Road, New Delhi, India</Typography>
+        </Box>
+      </Container>
+
+      {/* ChatBot */}
+      <ChatBot />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ChooseUser.css'; // Import additional CSS for styling
+import { Box, Typography, Grid, Button, TextField, Checkbox, FormControlLabel, Link, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom'; // Navigation functionality
 
 const ChooseUser = () => {
@@ -33,60 +33,79 @@ const ChooseUser = () => {
   };
 
   return (
-    <div className="choose-user-container">
+    <Box
+      sx={{
+        maxWidth: 600,
+        margin: '0 auto',
+        padding: 4,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 4,
+        alignItems: 'center',
+      }}
+    >
       {/* Account Link */}
-      <div className="account-link">
-        <a href="/signup">I do not have an account yet.</a>
-      </div>
+      <Typography variant="body1">
+        <Link href="/signup" underline="hover">
+          I do not have an account yet.
+        </Link>
+      </Typography>
 
-      {/* User Type Section */}
-      <div className="user-type-container">
-        <div
-          className={`user-type ${selectedUserType === 'Admin' ? 'selected' : ''}`}
-          onClick={() => setSelectedUserType('Admin')}
-        >
-          <span className="user-icon">&#128104;</span> {/* Admin Icon */}
-          <p>Admin</p>
-        </div>
-        <div
-          className={`user-type ${selectedUserType === 'Teacher' ? 'selected' : ''}`}
-          onClick={() => setSelectedUserType('Teacher')}
-        >
-          <span className="user-icon">&#128105;</span> {/* Teacher Icon */}
-          <p>Teacher</p>
-        </div>
-        <div
-          className={`user-type ${selectedUserType === 'Student' ? 'selected' : ''}`}
-          onClick={() => setSelectedUserType('Student')}
-        >
-          <span className="user-icon">&#128102;</span> {/* Student Icon */}
-          <p>Student</p>
-        </div>
-        <div
-          className={`user-type ${selectedUserType === 'Parent' ? 'selected' : ''}`}
-          onClick={() => setSelectedUserType('Parent')}
-        >
-          <span className="user-icon">&#128106;</span> {/* Parent Icon */}
-          <p>Parent</p>
-        </div>
-      </div>
+      {/* User Type Selection */}
+      <Grid container spacing={2} justifyContent="center">
+        {['Admin', 'Teacher', 'Student', 'Parent'].map((userType) => (
+          <Grid item xs={6} sm={3} key={userType}>
+            <Paper
+              elevation={selectedUserType === userType ? 6 : 2}
+              sx={{
+                padding: 2,
+                textAlign: 'center',
+                cursor: 'pointer',
+                border: selectedUserType === userType ? '2px solid #003366' : 'none',
+                '&:hover': { border: '2px solid #007bff' },
+              }}
+              onClick={() => setSelectedUserType(userType)}
+            >
+              <Typography variant="h6">{userType}</Typography>
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
 
       {/* Login Form */}
-      <form className="login-form" onSubmit={handleLogin}>
-        <input type="text" placeholder="Username" className="login-input" required />
-        <input type="password" placeholder="Password" className="login-input" required />
-        <div className="remember-me">
-          <input type="checkbox" id="rememberMe" />
-          <label htmlFor="rememberMe">Remember Me</label>
-        </div>
-        <button type="submit" className="login-button">Log in</button>
-      </form>
+      <Box component="form" onSubmit={handleLogin} sx={{ width: '100%', maxWidth: 400 }}>
+        <TextField
+          fullWidth
+          variant="outlined"
+          label="Username"
+          type="text"
+          required
+          sx={{ marginBottom: 2 }}
+        />
+        <TextField
+          fullWidth
+          variant="outlined"
+          label="Password"
+          type="password"
+          required
+          sx={{ marginBottom: 2 }}
+        />
+        <FormControlLabel
+          control={<Checkbox id="rememberMe" />}
+          label="Remember Me"
+        />
+        <Button type="submit" variant="contained" fullWidth sx={{ marginTop: 2 }}>
+          Log in
+        </Button>
+      </Box>
 
       {/* Forgot Password Link */}
-      <div className="forgot-password">
-        <a href="/forgot-password">Forgot password?</a>
-      </div>
-    </div>
+      <Typography variant="body2" sx={{ marginTop: 2 }}>
+        <Link href="/forgot-password" underline="hover">
+          Forgot password?
+        </Link>
+      </Typography>
+    </Box>
   );
 };
 

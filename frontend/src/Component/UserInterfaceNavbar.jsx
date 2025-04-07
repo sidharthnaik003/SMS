@@ -1,72 +1,67 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './UserInterface.css';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const UserInterfaceNavbar = () => {
-  const [showMenu, setShowMenu] = useState(false); // State for dropdown visibility
+  const [anchorEl, setAnchorEl] = useState(null); // State for dropdown menu
   const navigate = useNavigate(); // For navigation
 
-  const toggleMenu = () => setShowMenu(!showMenu); // Toggle menu visibility
-  const handleSignUp = () => {
-    navigate('/signup'); // Navigate to Sign Up page
-    setShowMenu(false); // Close menu after navigation
+  const toggleMenu = (event) => {
+    if (anchorEl) {
+      setAnchorEl(null); // Close menu
+    } else {
+      setAnchorEl(event.currentTarget); // Open menu
+    }
   };
-  const handleLogin = () => {
-    navigate('/choose-user'); // Navigate to Login page
-    setShowMenu(false); // Close menu after navigation
-  };
-  const handleHelp = () => {
-    alert('Help Section Coming Soon!'); // Display "Coming Soon" message
-    setShowMenu(false); // Close the dropdown menu
+
+  const handleNavigation = (path) => {
+    navigate(path); // Navigate to the specified path
+    setAnchorEl(null); // Close menu after navigation
   };
 
   return (
-    <nav className="navbar user-interface-container">
-      {/* Navbar Header */}
-      <h1 className="navbar-header">School Management System</h1>
+    <AppBar position="static" sx={{ backgroundColor: '#003366', padding: 1 }}>
+      <Toolbar>
+        {/* Navbar Header */}
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          School Management System
+        </Typography>
 
-      {/* Hamburger Menu / Close Button (Toggled) */}
-      <button
-        className="toggle-menu-button"
-        aria-label={showMenu ? 'Close Menu' : 'Open Menu'}
-        onClick={toggleMenu}
-      >
-        {showMenu ? (
-          <span className="close-icon">✖</span> // Close Button
-        ) : (
-          <>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </> // Three-Bar Button (Hamburger Menu)
-        )}
-      </button>
+        {/* Hamburger Menu / Close Button */}
+        <IconButton
+          color="inherit"
+          aria-label={anchorEl ? 'Close Menu' : 'Open Menu'}
+          onClick={toggleMenu}
+        >
+          {anchorEl ? <CloseIcon /> : <MenuIcon />}
+        </IconButton>
 
-      {/* Dropdown Menu */}
-      {showMenu && (
-        <div className="dropdown-menu">
-          <button className="action-button help-button" onClick={handleHelp}>
-            Help
-          </button>
-
-          {/* Sign-Up Button */}
-          <button
-            className="action-button sign-up-button"
-            onClick={handleSignUp}
-          >
+        {/* Dropdown Menu */}
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={() => setAnchorEl(null)}
+        >
+          <MenuItem onClick={() => alert('Help Section Coming Soon!')}>Help</MenuItem>
+          <MenuItem onClick={() => handleNavigation('/signup')}>
             <span style={{ marginRight: '10px' }}>&#128100;</span> Sign Up
-          </button>
-
-          {/* Login Button */}
-          <button
-            className="action-button login-button"
-            onClick={handleLogin}
-          >
+          </MenuItem>
+          <MenuItem onClick={() => handleNavigation('/choose-user')}>
             <span style={{ marginRight: '10px' }}>&#128274;</span> Login
-          </button>
-        </div>
-      )}
-    </nav>
+          </MenuItem>
+        </Menu>
+      </Toolbar>
+    </AppBar>
   );
 };
 

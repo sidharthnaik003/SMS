@@ -1,120 +1,97 @@
 /* Sign-up Container */
 .signup-container {
-    background-color: #a1b7d7; /* Primary background color */
-    color: white;
-    padding: 20px;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
 }
 
-/* Header Styling */
+/* Header Section */
 .signup-header h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px; /* Improve font size for header */
-    font-weight: bold; /* Make header bold for emphasis */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #003366;
 }
 
-/* Sign-up Form Styling */
+.signup-header p {
+  text-align: center;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
 .signup-form {
-    background-color: #ffffff; /* Form background color for better contrast */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for form */
-    width: 300px; /* Fixed width for form */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center align inputs and buttons */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* Input Fields Styling */
 .signup-form input {
-    width: 100%; /* Ensure inputs take up full width */
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Uniform font size */
-    box-sizing: border-box; /* Avoid overflow issues */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
-/* Input Field Focus */
 .signup-form input:focus {
-    border-color: #1e88e5; /* Highlight border on focus */
-    outline: none; /* Remove default browser outline */
-    box-shadow: 0 0 5px rgba(30, 136, 229, 0.5); /* Subtle glow effect */
+  border-color: #003366;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 51, 102, 0.2);
 }
 
-/* Terms and Conditions Section */
+/* Terms and Conditions */
 .terms-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 14px; /* Make terms font slightly smaller */
-    color: #555; /* Neutral text color for better readability */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333333;
 }
 
-.terms-container input {
-    margin-right: 10px; /* Space between checkbox and label */
+.terms-container a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-/* Sign-up Button Styling */
+.terms-container a:hover {
+  text-decoration: underline;
+}
+
+/* Sign-up Button */
 .signup-button {
-    width: 100%; /* Make button take full width */
-    padding: 10px;
-    background-color: #1e88e5; /* Button color */
-    color: white;
-    border: none;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer;
-    font-size: 16px; /* Uniform font size */
-    font-weight: bold; /* Emphasize call-to-action */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover transitions */
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .signup-button:hover {
-    background-color: #1565c0; /* Darker hover effect */
-    transform: translateY(-2px); /* Subtle lift on hover */
+  background-color: #00509e;
 }
 
-/* Login Link Styling */
+/* Login Redirect */
 .login-link {
-    margin-top: 15px;
-    font-size: 14px;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
 }
 
 .login-link a {
-    color: #ffffff; /* White link color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Emphasize link */
+  color: #007bff;
+  text-decoration: none;
 }
 
 .login-link a:hover {
-    text-decoration: underline; /* Hover effect for link */
-}
-
-/* Responsive Design */
-@media screen and (max-width: 400px) {
-    .signup-container {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-
-    .signup-form {
-        width: 90%; /* Adjust form width for responsiveness */
-    }
-
-    .signup-header h1 {
-        font-size: 20px; /* Reduce header size */
-    }
-
-    .signup-button {
-        font-size: 14px; /* Adjust button text size */
-    }
-
-    .login-link {
-        font-size: 12px; /* Adjust link text size */
-    }
+  text-decoration: underline;
 }
