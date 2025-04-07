@@ -88,3 +88,37 @@ school-management-system/
 ├── package-lock.json           # Lock file for consistent dependency versions
 │
 └── README.md                   # General project documentation
+
+
+backend/
+├── models/              # Database models (e.g., Students, Teachers, Classes)
+│   ├── Student.js       # Student schema
+│   ├── Teacher.js       # Teacher schema
+│   ├── Parent.js        # Parent schema
+│   ├── Class.js         # Class schema
+│   ├── Exam.js          # Exam schema
+├── routes/              # Route definitions for APIs
+│   ├── studentRoutes.js # Routes for managing students
+│   ├── teacherRoutes.js # Routes for managing teachers
+│   ├── classRoutes.js   # Routes for managing classes
+│   ├── authRoutes.js    # Routes for authentication
+│   ├── examRoutes.js    # Routes for exam management
+├── controllers/         # Controllers with business logic
+│   ├── studentController.js
+│   ├── teacherController.js
+│   ├── authController.js
+│   ├── classController.js
+│   ├── examController.js
+├── config/              # Configuration files
+│   ├── db.js            # MongoDB connection
+│   └── dotenv.js        # Environment variables
+├── middlewares/         # Middleware functions (e.g., authentication)
+│   ├── authMiddleware.js
+│   └── errorMiddleware.js
+├── utils/               # Utility functions
+│   ├── emailUtils.js    # Functions for sending emails
+│   └── jwtUtils.js      # Functions for handling JWT tokens
+├── app.js               # Main app setup
+├── server.js            # Entry point for the server
+├── .env                 # Environment variables (e.g., MongoDB URI)
+├── package.json         # Backend dependencies
