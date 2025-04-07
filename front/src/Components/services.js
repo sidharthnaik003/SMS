@@ -73,7 +73,7 @@ const Service = () => {
             </div>
             <div class=" col-sm-12 col-md-6 col-lg-3">
               <div class="card-body">
-                <h5 class="card-title">Add Book</h5><br />
+                <h5 class="card-title">Add </h5><br />
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Add</button>
               </div>
             </div>
@@ -81,7 +81,7 @@ const Service = () => {
             </div>
             <div class=" col-sm-12 col-md-6 col-lg-3">
               <div class="card-body">
-                <h5 class="card-title">View Book</h5><br/>  
+                <h5 class="card-title">View </h5><br/>  
                 <a href="/view" class="btn btn-primary">View</a>
               </div>
             </div>
@@ -171,7 +171,7 @@ const Service = () => {
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" class="btn btn-success">Add Book</button>
+                      <button type="submit" class="btn btn-success">Add</button>
                     </div>
                   </form>
                 </div>
@@ -181,18 +181,18 @@ const Service = () => {
         </div>
         <br /><br /><br /><br /><br /><br /><br /><br />  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         <div>
-          <footer class="bg-light pb-5">
-            <div class="container text-center">
-              <div>
-                <div>Contact US</div>
-                <div>Phone:+91 7986525131</div>
-                <div>E-Mail:codecommanders@gmail.com</div>
-              </div>
-              <p class="font-italic text-muted mb-0">
-                &copy; Copyrights CodeCommanders.com All rights reserved.
-              </p>
-            </div>
-          </footer>
+        <footer class="bg-light pb-5">
+        <div class="container text-center">
+          <div>
+            <div>Contact US</div>
+            <div>Phone: +91 9876543210</div>
+            <div>Email: admin@schoolmanagement.com</div>
+          </div>
+          <p class="font-italic text-muted mb-0">
+            &copy; Copyrights  All rights reserved.
+          </p>
+        </div>
+      </footer>
         </div>
 
       </body>

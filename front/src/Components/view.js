@@ -106,17 +106,17 @@ function Myblogs() {
           ))}
         </div>
         <footer class="bg-light pb-5">
-          <div class="container text-center">
-            <div>
-              <div>Contact US</div>
-              <div>Phone:+91 7986525131</div>
-              <div>E-Mail:codecommanders@gmail.com</div>
-            </div>
-            <p class="font-italic text-muted mb-0">
-              &copy; Copyrights CodeCommanders.com All rights reserved.
-            </p>
+        <div class="container text-center">
+          <div>
+            <div>Contact US</div>
+            <div>Phone: +91 9876543210</div>
+            <div>Email: admin@schoolmanagement.com</div>
           </div>
-        </footer>
+          <p class="font-italic text-muted mb-0">
+            &copy; Copyrights  All rights reserved.
+          </p>
+        </div>
+      </footer>
 
 
       </div>

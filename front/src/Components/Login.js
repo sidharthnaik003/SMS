@@ -75,7 +75,7 @@ const Login = () => {
               height="50"
               alt="Logo"
             />
-            <center><h1 class="h2 fw-bold mb-0">Fusion Library</h1></center>
+            <center><h1 class="h2 fw-bold mb-0">School Management System</h1></center>
             <br />
             <h5 class="fw-normal mb-3 pb-3">Sign into your account</h5>
             {/* <br></br> */}
