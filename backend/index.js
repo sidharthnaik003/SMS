@@ -1,44 +1,31 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require('dotenv');
-const cors = require('cors');
-const cookieParser = require("cookie-parser");
-const route = require("./routes/routes.js");
-
-const { URI, PORT } = process.env;
-
+const express = require("express")
+const cors = require("cors")
+const mongoose = require("mongoose")
+const dotenv = require("dotenv")
+// const bodyParser = require("body-parser")
 const app = express()
-dotenv.config()
+const Routes = require("./routes/route.js")
 
+const PORT = process.env.PORT || 5000
 
-app.use(express.json());  //to get json datas from client 
+dotenv.config();
 
-//to apply cors 
-app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+// app.use(bodyParser.json({ limit: '10mb', extended: true }))
+// app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
+app.use(express.json({ limit: '10mb' }))
+app.use(cors())
 
+mongoose
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    })
+    .then(console.log("Connected to MongoDB"))
+    .catch((err) => console.log("NOT CONNECTED TO NETWORK", err))
 
-//connecting to mongodb database
-mongoose.connect(URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => {
-    console.log("db connected");
-  })
-  .catch((err) => {
-    console.log(err);
-  })
+app.use('/', Routes);
 
 app.listen(PORT, () => {
-  console.log(`server running at ${PORT}`);
-});
-
-app.use(cookieParser());
-app.use("/", route);
+    console.log(`Server started at port no. ${PORT}`)
+})
